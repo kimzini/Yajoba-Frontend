@@ -1,0 +1,17 @@
+dist/
+build/
+
+node_modules/
+
+*.config.js
+*.config.ts
+
+*.log
+
+*.min.js
+*.bundle.js
+
+*.d.ts
+
+*.bak
+*.tmp
