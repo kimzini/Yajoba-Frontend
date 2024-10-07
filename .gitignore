@@ -28,10 +28,6 @@ dist/
 *.njsproj
 *.sln
 
-# TailwindCSS generated files
-tailwind.config.js
-postcss.config.js
-
 # TypeScript
 *.tsbuildinfo
 
