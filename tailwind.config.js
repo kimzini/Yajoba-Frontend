@@ -9,6 +9,16 @@ module.exports = {
       fontFamily: {
         pretendard: ["Pretendard"],
       },
+
+      screens: {
+        xs: "390px",
+        sm: "640px",
+        md: "768px",
+        lg: "991px",
+        xl: "1280px",
+        "2xl": "1440px",
+      },
+
       fontSize: {
         xxlarge36: ["2.25rem", { lineHeight: "3rem" }],
         xxlarge32: ["2rem", { lineHeight: "2.625rem" }],
