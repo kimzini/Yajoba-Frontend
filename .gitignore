@@ -43,3 +43,5 @@ dist/
 
 # React Query devtools cache
 .react-query-devtools/
+
+global.d.ts
