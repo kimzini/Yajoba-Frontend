@@ -84,6 +84,7 @@ module.exports = {
         fourth: "#F0FC61",
         point: "#DAFF7C",
         error: "#F65E39",
+        kakaoyellow: '#FFE600',
         neutral: {
           0: "#27272D",
           10: "#2A2D34",

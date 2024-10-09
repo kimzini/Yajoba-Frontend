@@ -1,9 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
-  HeaderWithoutSearch,
-  HeaderWithSearch,
   LoginHeader,
 } from './components/Header';
+import { Login } from './pages/auth/Login';
 
 function App() {
   return (
@@ -15,6 +14,7 @@ function App() {
         <Route path="/product" element={<></>} />
         <Route path="/chat" element={<></>} />
         <Route path="/mypage" element={<></>} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
