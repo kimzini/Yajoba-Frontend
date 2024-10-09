@@ -23,6 +23,7 @@ export const Login = () => {
               className="rounded-xs border border-neutral-80 bg-primary-0 p-3 text-small16 text-neutral-0"
             />
             <input
+              type="password"
               placeholder="비밀번호"
               className="rounded-xs border border-neutral-80 bg-primary-0 p-3 text-small16 text-neutral-0"
             />
