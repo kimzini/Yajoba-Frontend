@@ -22,14 +22,14 @@ export const ProfileInput = () => {
 
   const handleSubmit = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (!validateProfile()) {
-      e.preventDefault(); // 유효성 검사를 통과하지 못하면 페이지 이동 방지
+      e.preventDefault();
     }
   };
 
   return (
     <div className="flex h-screen w-screen">
       <LoginHeader />
-      <div className="flex w-full items-center gap-[10rem] p-[18rem]">
+      <div className="flex w-full items-center gap-[10rem] p-[18rem] mt-8">
         <div className="flex w-full flex-col gap-[2rem]">
           <div className="flex flex-col gap-[0.5rem]">
             <span className="font-heavy text-large24 text-neutral-0">
@@ -40,6 +40,7 @@ export const ProfileInput = () => {
             </span>
           </div>
           <div className="flex flex-col gap-[1rem]">
+            <div className="flex flex-col gap-[0.4rem]">
             <input
               name="nickname"
               value={fields.nickname}
@@ -52,7 +53,9 @@ export const ProfileInput = () => {
                 * 닉네임을 입력해 주세요.
               </span>
             )}
+            </div>
 
+            <div className="flex flex-col gap-[0.4rem]">
             <input
               name="phone"
               type="tel"
@@ -66,7 +69,9 @@ export const ProfileInput = () => {
                 * 전화번호는 11자리 숫자로 입력해 주세요.
               </span>
             )}
+            </div>
 
+            <div className="flex flex-col gap-[0.4rem]">
             <div className="flex items-center gap-[0.75rem]">
               <input
                 name="email"
@@ -89,8 +94,10 @@ export const ProfileInput = () => {
                 * 유효한 이메일 주소를 입력해 주세요.
               </span>
             )}
+            </div>
 
-            <input
+            <div className="flex flex-col gap-[0.4rem]">
+            <input 
               name="address"
               value={fields.address}
               onChange={handleChange}
@@ -102,6 +109,7 @@ export const ProfileInput = () => {
                 * 주소를 입력해 주세요.
               </span>
             )}
+            </div>
           </div>
           <a
             className="flex w-4/5 items-center justify-center rounded-xs border border-neutral-80 bg-secondary-dark px-5 py-2"
