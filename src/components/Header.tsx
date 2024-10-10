@@ -208,10 +208,16 @@ export const LoginHeader = () => {
         </div>
 
         <div className="flex items-center justify-center gap-[2.5rem]">
-          <a className="flex cursor-pointer items-center gap-2 text-medium18 font-semibold text-neutral-10">
+          <a
+            className="flex cursor-pointer items-center gap-2 text-medium18 font-semibold text-neutral-10"
+            href="/login"
+          >
             로그인
           </a>
-          <a className="flex cursor-pointer items-center gap-2 text-medium18 font-semibold text-neutral-10">
+          <a
+            className="flex cursor-pointer items-center gap-2 text-medium18 font-semibold text-neutral-10"
+            href="/signup"
+          >
             회원가입
           </a>
         </div>
