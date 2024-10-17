@@ -1,25 +1,104 @@
-import { HeaderWithoutSearch } from "../../components/Header";
-import { DayInput, PriceInput, ProductInput } from "./components/input";
-import { ProductTextarea } from "./components/textarea";
-import { ImageUploader } from "./components/ImageUploader";
+import { HeaderWithoutSearch } from '../../components/Header';
+import { DayInput, PriceInput, ProductInput } from './components/input';
+import { ProductTextarea } from './components/textarea';
+import { ImageUploader } from './components/ImageUploader';
+import { useState } from 'react';
+
+interface RentalPeriod {
+  start: string;
+  end: string;
+}
 
 export const ProductCreatePage = () => {
-  return(
+  const [title, setTitle] = useState<string>('');
+  const [productName, setProductName] = useState<string>('');
+  const [description, setDescription] = useState<string>('');
+  const [price, setPrice] = useState<string>('');
+  const [day, setDay] = useState<string>('');
+  const [location, setLocation] = useState<string>('');
+  const [rentalPeriod, setRentalPeriod] = useState<RentalPeriod>({
+    start: '',
+    end: '',
+  });
+  const [images, setImages] = useState<string[]>([]);
+
+  const handleImagesUpload = (newImages: string[]) => {
+    setImages(newImages);
+  };
+
+  const handleSubmit = async () => {
+    const formData = {
+      title,
+      productName,
+      description,
+      price,
+      day,
+      location,
+      rentalPeriod,
+      images,
+    };
+
+    // API
+  };
+
+  return (
     <div className="flex h-screen w-screen">
-        {/* 토큰 받았냐 안 받았냐에 따라 헤더 다르게 나옴 */}
+      {/* 토큰 받았냐 안 받았냐에 따라 헤더 다르게 나옴 */}
       <HeaderWithoutSearch />
-      <div className="flex flex-col w-full px-[16rem] py-[5.5rem]">
-        <div className="flex w-full border-b border-neutral-80 text-xxlarge32 font-semibold text-neutral-0 px-[1rem] pt-[4rem] pb-[2rem]">
+      <div className="flex w-full flex-col px-[20rem] py-[5.5rem]">
+        <div className="flex w-full border-b border-neutral-80 px-[1rem] pb-[2rem] pt-[4rem] text-xxlarge32 font-semibold text-neutral-0">
           상품 등록하기
         </div>
-        <div className="flex flex-col w-full px-[0.5rem] py-[2rem] gap-[2rem]">
-          <ProductInput title="제목" />
-          <ImageUploader maxImages={10} />
-          <ProductInput title="상품명" />
-          <ProductTextarea />
-          <PriceInput />
-          <ProductInput title="위치" />
-          <DayInput />
+        <div className="flex w-full flex-col gap-[2rem] px-[0.5rem] py-[2rem]">
+          <ProductInput
+            title="제목"
+            value={title}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setTitle(e.target.value)
+            }
+          />
+          <ImageUploader maxImages={10} onImagesChange={handleImagesUpload} />
+          <ProductInput
+            title="상품명"
+            value={productName}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setProductName(e.target.value)
+            }
+          />
+          <ProductTextarea
+            value={description}
+            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+              setDescription(e.target.value)
+            }
+          />
+
+          <PriceInput
+            value={price}
+            onChangePrice={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setPrice(e.target.value)
+            }
+            selectedDay={day}
+            onDayChange={(selectedDay: string) => setDay(selectedDay)}
+          />
+          <ProductInput
+            title="위치"
+            value={location}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setLocation(e.target.value)
+            }
+          />
+          <DayInput
+            rentalPeriod={rentalPeriod}
+            onPeriodChange={(start: string, end: string) =>
+              setRentalPeriod({ start, end })
+            }
+          />
+          <button
+            onClick={handleSubmit}
+            className="mx-[1rem] mt-6 rounded-xs bg-primary-dark px-4 py-3 text-medium18 text-white"
+          >
+            상품 등록
+          </button>
         </div>
       </div>
     </div>

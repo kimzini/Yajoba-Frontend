@@ -3,10 +3,12 @@ import plus from '../../../assets/plus.svg';
 
 interface ImageUploaderProps {
   maxImages?: number;
+  onImagesChange: (newImages: string[]) => void;
 }
 
 export const ImageUploader: React.FC<ImageUploaderProps> = ({
   maxImages = 10,
+  onImagesChange,
 }) => {
   const [uploadedImages, setUploadedImages] = useState<string[]>([]);
 
@@ -17,7 +19,9 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
         URL.createObjectURL(file),
       );
       if (uploadedImages.length + newImages.length <= maxImages) {
-        setUploadedImages([...uploadedImages, ...newImages]);
+        const updatedImages = [...uploadedImages, ...newImages];
+        setUploadedImages(updatedImages);
+        onImagesChange(updatedImages);
       }
     }
   };

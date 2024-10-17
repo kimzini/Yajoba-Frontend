@@ -1,15 +1,24 @@
 interface ButtonProps {
-    isChecked: boolean;
-    onClick?: () => void;
-    children: React.ReactNode;
+  isChecked: boolean;
+  onClick?: () => void;
+  children: React.ReactNode;
 }
 
-export const DayButton: React.FC<ButtonProps> = ({ isChecked, onClick, children }) => {
-    return(
-        <button className={`p-[1rem] items-center justify-center border rounded-xs text-small16 font-regular ${
-            isChecked ? 'bg-primary-10 text-primary border-primary' : 'bg-neutral-100 text-placeholder border-neutral-80'}`}
-            onClick={onClick}>
-            {children}
-        </button>
-    )
-}
+export const DayButton: React.FC<ButtonProps> = ({
+  isChecked,
+  onClick,
+  children,
+}) => {
+  return (
+    <button
+      className={`font-regular items-center justify-center rounded-xs border p-[1rem] text-small16 ${
+        isChecked
+          ? 'border-primary bg-primary-10 text-primary'
+          : 'border-neutral-80 bg-neutral-100 text-placeholder'
+      }`}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+};
