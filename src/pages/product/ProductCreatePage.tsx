@@ -4,11 +4,6 @@ import { ProductTextarea } from './components/textarea';
 import { ImageUploader } from './components/ImageUploader';
 import { useState } from 'react';
 
-interface RentalPeriod {
-  start: string;
-  end: string;
-}
-
 export const ProductCreatePage = () => {
   const [title, setTitle] = useState<string>('');
   const [productName, setProductName] = useState<string>('');
@@ -94,7 +89,7 @@ export const ProductCreatePage = () => {
           />
           <button
             onClick={handleSubmit}
-            className="mx-[1rem] mt-6 rounded-xs bg-primary-dark px-4 py-3 text-medium18 text-white"
+            className="mx-[1rem] mt-6 mb-[5rem] rounded-xs bg-primary-dark px-4 py-3 text-medium18 text-white"
           >
             상품 등록
           </button>
