@@ -37,13 +37,13 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
           >
             <img
               src={image}
-              alt={`Uploaded ${index + 1}`}
-              className="h-full w-full object-cover"
+              alt={`image ${index + 1}`}
+              className="max-h-[12rem] max-w-[12rem] object-cover"
             />
           </div>
         ))}
         {uploadedImages.length < maxImages && (
-          <label className="flex h-[12rem] h-screen w-[12rem] w-full cursor-pointer flex-col items-center justify-center gap-[1rem] rounded-sm border border-neutral-80 bg-neutral-100">
+          <label className="flex w-[12rem] h-[12rem] cursor-pointer flex-col items-center justify-center gap-[1rem] rounded-sm border border-neutral-80 bg-neutral-100">
             <input
               type="file"
               accept="image/*"
