@@ -47,7 +47,7 @@ export const CategoryDropdowns = () => {
         {/* 대분류 */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="font-regular border border-neutral-80 bg-neutral-100 px-[4rem] py-[1.5rem] text-neutral-40 text-medium20 flex justify-between">
+            <Button className="font-regular border border-neutral-80 bg-neutral-100 px-[3rem] py-[1.5rem] text-neutral-40 text-medium20 flex justify-between">
               {selectedMainCategory}
               <img src={dropdown} alt="dropdown" />
             </Button>
@@ -74,7 +74,7 @@ export const CategoryDropdowns = () => {
         {/* 중분류 */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="font-regular border border-neutral-80 bg-neutral-100 px-[4rem] py-[1.5rem] text-neutral-40 text-medium20 flex justify-between">
+            <Button className="font-regular border border-neutral-80 bg-neutral-100 px-[3rem] py-[1.5rem] text-neutral-40 text-medium20 flex justify-between">
               {selectedSubCategory} 
               <img src={dropdown} alt="dropdown" />
             </Button>
@@ -100,7 +100,7 @@ export const CategoryDropdowns = () => {
         {/* 소분류 */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="font-regular border border-neutral-80 bg-neutral-100 px-[4rem] py-[1.5rem] text-neutral-40 text-medium20 flex justify-between">
+            <Button className="font-regular border border-neutral-80 bg-neutral-100 px-[3rem] py-[1.5rem] text-neutral-40 text-medium20 flex justify-between">
               {selectedMinorCategory}
               <img src={dropdown} alt="dropdown" />
             </Button>
