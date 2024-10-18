@@ -3,6 +3,7 @@ import { DayInput, PriceInput, ProductInput } from './components/input';
 import { ProductTextarea } from './components/textarea';
 import { ImageUploader } from './components/ImageUploader';
 import { useState } from 'react';
+import { CategoryDropdowns } from './components/Dropdown';
 
 export const ProductCreatePage = () => {
   const [title, setTitle] = useState<string>('');
@@ -59,6 +60,7 @@ export const ProductCreatePage = () => {
               setProductName(e.target.value)
             }
           />
+          <CategoryDropdowns />
           <ProductTextarea
             value={description}
             onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
@@ -87,6 +89,7 @@ export const ProductCreatePage = () => {
             onStartDateChange={(date: Date | null) => setStartDate(date)}
             onEndDateChange={(date: Date | null) => setEndDate(date)}
           />
+
           <button
             onClick={handleSubmit}
             className="mx-[1rem] mt-6 mb-[5rem] rounded-xs bg-primary-dark px-4 py-3 text-medium18 text-white"
