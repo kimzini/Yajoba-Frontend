@@ -1,6 +1,7 @@
 import { ChangeEvent, useState } from 'react';
-import calendar from '../../../assets/calendar.svg';
 import { DayButton } from './button';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 interface InputProps {
   title?: string;
@@ -86,50 +87,46 @@ export const PriceInput: React.FC<PriceInputProps> = ({
   );
 };
 
-interface RentalPeriod {
-  start: string;
-  end: string;
-}
-
 interface DayInputProps {
-  rentalPeriod: RentalPeriod;
-  onPeriodChange: (start: string, end: string) => void;
+  startDate: Date | null;
+  endDate: Date | null;
+  onStartDateChange: (date: Date | null) => void;
+  onEndDateChange: (date: Date | null) => void;
 }
 
 export const DayInput: React.FC<DayInputProps> = ({
-  rentalPeriod,
-  onPeriodChange,
+  startDate,
+  endDate,
+  onStartDateChange,
+  onEndDateChange,
 }) => {
-  const handleStartDateChange = (e: ChangeEvent<HTMLInputElement>) => {
-    onPeriodChange(e.target.value, rentalPeriod.end);
-  };
-
-  const handleEndDateChange = (e: ChangeEvent<HTMLInputElement>) => {
-    onPeriodChange(rentalPeriod.start, e.target.value);
-  };
-
   return (
     <div className="flex flex-col gap-4 px-[1rem]">
       <span className="text-medium18 text-neutral-0">대여 가능 기간</span>
-      <div className="flex items-center justify-center gap-10">
-        <div className="flex w-1/2 items-center justify-between rounded-xs border border-neutral-80 bg-neutral-100 px-[1rem] py-[0.75rem]">
-          <input
-            className="font-regular bg-neutral-100 text-small16 text-neutral-0 focus:outline-none"
-            value={rentalPeriod.start}
-            onChange={handleStartDateChange}
+      <div className="flex items-center gap-8">
+        <div className='relative'>
+          <DatePicker
+            selected={startDate ?? undefined}
+            onChange={(date) => onStartDateChange(date)}
+            selectsStart
+            startDate={startDate ?? undefined} 
+            endDate={endDate ?? undefined}    
+            dateFormat="yyyy-MM-dd"
+            className='flex items-center rounded-xs border border-neutral-80 bg-neutral-100 px-[1rem] py-[0.75rem] focus:outline-none'
           />
-          <img src={calendar} alt="calendar" />
         </div>
-
         <span className="text-medium18 text-placeholder">~</span>
-
-        <div className="flex w-1/2 items-center justify-between rounded-xs border border-neutral-80 bg-neutral-100 px-[1rem] py-[0.75rem]">
-          <input
-            className="font-regular bg-neutral-100 text-small16 text-neutral-0 focus:outline-none"
-            value={rentalPeriod.end}
-            onChange={handleEndDateChange}
+        <div className='relative'>
+          <DatePicker
+            selected={endDate ?? undefined}  
+            onChange={(date) => onEndDateChange(date)}
+            selectsEnd
+            startDate={startDate ?? undefined}  
+            endDate={endDate ?? undefined}      
+            minDate={startDate ?? undefined}   
+            dateFormat="yyyy-MM-dd"
+            className='flex items-center rounded-xs border border-neutral-80 bg-neutral-100 px-[1rem] py-[0.75rem] focus:outline-none'
           />
-          <img src={calendar} alt="calendar" />
         </div>
       </div>
     </div>

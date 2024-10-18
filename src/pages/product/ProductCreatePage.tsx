@@ -16,10 +16,8 @@ export const ProductCreatePage = () => {
   const [price, setPrice] = useState<string>('');
   const [day, setDay] = useState<string>('');
   const [location, setLocation] = useState<string>('');
-  const [rentalPeriod, setRentalPeriod] = useState<RentalPeriod>({
-    start: '',
-    end: '',
-  });
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
   const [images, setImages] = useState<string[]>([]);
 
   const handleImagesUpload = (newImages: string[]) => {
@@ -34,7 +32,8 @@ export const ProductCreatePage = () => {
       price,
       day,
       location,
-      rentalPeriod,
+      startDate: startDate ? startDate.toISOString().split('T')[0] : '',
+      endDate: endDate ? endDate.toISOString().split('T')[0] : '',
       images,
     };
 
@@ -88,10 +87,10 @@ export const ProductCreatePage = () => {
             }
           />
           <DayInput
-            rentalPeriod={rentalPeriod}
-            onPeriodChange={(start: string, end: string) =>
-              setRentalPeriod({ start, end })
-            }
+            startDate={startDate}
+            endDate={endDate}
+            onStartDateChange={(date: Date | null) => setStartDate(date)}
+            onEndDateChange={(date: Date | null) => setEndDate(date)}
           />
           <button
             onClick={handleSubmit}
