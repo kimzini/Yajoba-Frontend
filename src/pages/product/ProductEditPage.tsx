@@ -1,5 +1,11 @@
 import { HeaderWithoutSearch } from '../../components/Header';
-import { DayInput, PriceInput, ProductInput } from './components/input';
+import {
+  DayInput,
+  LocationInput,
+  PriceInput,
+  ProductInput,
+  TagInput,
+} from './components/input';
 import { ProductTextarea } from './components/textarea';
 import { ImageUploader } from './components/ImageUploader';
 import { useState } from 'react';
@@ -8,14 +14,21 @@ import { CategoryDropdowns } from './components/Dropdown';
 export const ProductEditPage = () => {
   const [title, setTitle] = useState<string>('');
   const [productName, setProductName] = useState<string>('');
+  const [tags, setTags] = useState<string>('');
   const [description, setDescription] = useState<string>('');
   const [price, setPrice] = useState<string>('');
-  const [location, setLocation] = useState<string>('');
+  const [sido, setSido] = useState<string>('');
+  const [sigungu, setSigungu] = useState<string>('');
+  const [bname, setBname] = useState<string>('');
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
   const [images, setImages] = useState<string[]>([]);
 
   // 상품 조회 api
+
+  const handleTagsChange = (newTags: string) => {
+    setTags(newTags);
+  };
 
   const handleImagesUpload = (newImages: string[]) => {
     setImages(newImages);
@@ -25,6 +38,7 @@ export const ProductEditPage = () => {
     const formData = {
       title,
       productName,
+      tags,
       description,
       price,
       location,
@@ -37,9 +51,9 @@ export const ProductEditPage = () => {
   };
 
   return (
-    <div className="flex min-h-screen w-screen">
+    <div className="min-h-screen flex w-screen">
       <HeaderWithoutSearch />
-      <div className="flex w-full flex-col px-[220px] py-[60px]">
+      <div className="flex w-full flex-col px-[240px] py-[60px]">
         <div className="flex w-full border-b border-neutral-80 px-[1rem] pb-[2rem] pt-[4rem] text-xxlarge32 font-semibold text-neutral-0">
           상품 수정하기
         </div>
@@ -51,12 +65,20 @@ export const ProductEditPage = () => {
               setTitle(e.target.value)
             }
           />
-          <ImageUploader maxImages={10} onImagesChange={handleImagesUpload} />
           <ProductInput
             title="상품명"
             value={productName}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setProductName(e.target.value)
+            }
+          />
+
+          <TagInput onTagsChange={handleTagsChange} />
+          <ImageUploader maxImages={10} onImagesChange={handleImagesUpload} />
+          <PriceInput
+            value={price}
+            onChangePrice={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setPrice(e.target.value)
             }
           />
           <CategoryDropdowns />
@@ -66,19 +88,22 @@ export const ProductEditPage = () => {
               setDescription(e.target.value)
             }
           />
-
-          <PriceInput
-            value={price}
-            onChangePrice={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setPrice(e.target.value)
-            }
-          />
-          <ProductInput
+          <LocationInput
             title="위치"
-            value={location}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setLocation(e.target.value)
-            }
+            sido={sido}
+            sigungu={sigungu}
+            bname={bname}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              const { name, value } = e.target;
+
+              if (name === 'sido') {
+                setSido(value);
+              } else if (name === 'sigungu') {
+                setSigungu(value);
+              } else if (name === 'bname') {
+                setBname(value);
+              }
+            }}
           />
           <DayInput
             startDate={startDate}
@@ -89,7 +114,7 @@ export const ProductEditPage = () => {
 
           <button
             onClick={handleSubmit}
-            className="mx-[1rem] mb-[5rem] mt-6 rounded-xs bg-primary-dark px-4 py-3 text-medium18 text-white"
+            className="mx-[1rem] mb-[5rem] mt-6 rounded-xs bg-secondary-100 px-4 py-3 text-medium18 text-white"
           >
             상품 수정
           </button>
