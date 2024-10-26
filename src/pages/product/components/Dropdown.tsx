@@ -51,9 +51,9 @@ export const CategoryDropdowns = () => {
         {/* 대분류 */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="font-regular flex justify-between border border-neutral-80 bg-neutral-100 px-[3rem] py-[1.5rem] text-medium20 text-neutral-40">
-              {selectedMainCategory}
-              <Dropdown />
+            <Button className="font-regular flex min-w-[180px] items-center justify-between border border-neutral-80 bg-neutral-100 px-8 py-6 text-medium20 text-neutral-40">
+              <span>{selectedMainCategory}</span>
+              <Dropdown className="self-center pt-[2px]" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-neutral-100 py-4 text-medium18 font-light text-neutral-30">
@@ -73,14 +73,14 @@ export const CategoryDropdowns = () => {
           </DropdownMenuContent>
         </DropdownMenu>
 
-       <RightArray />
+        <RightArray />
 
         {/* 중분류 */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="font-regular flex justify-between border border-neutral-80 bg-neutral-100 px-[3rem] py-[1.5rem] text-medium20 text-neutral-40">
-              {selectedSubCategory}
-              <Dropdown />
+            <Button className="font-regular flex min-w-[180px] items-center justify-between border border-neutral-80 bg-neutral-100 px-8 py-6 text-medium20 text-neutral-40">
+              <span>{selectedSubCategory}</span>
+              <Dropdown className="self-center pt-[2px]"/>
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-neutral-100 py-4 text-medium18 font-light text-neutral-30">
@@ -104,9 +104,9 @@ export const CategoryDropdowns = () => {
         {/* 소분류 */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="font-regular flex justify-between border border-neutral-80 bg-neutral-100 px-[3rem] py-[1.5rem] text-medium20 text-neutral-40">
-              {selectedMinorCategory}
-              <Dropdown />
+            <Button className="font-regular flex min-w-[180px] items-center justify-between border border-neutral-80 bg-neutral-100 px-8 py-6 text-medium20 text-neutral-40">
+              <span>{selectedMinorCategory}</span>
+              <Dropdown className="self-center pt-[2px]"/>
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-neutral-100 py-4 text-medium18 font-light text-neutral-30">
