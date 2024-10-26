@@ -5,7 +5,7 @@ interface TextareaProps {
   onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-export const ProductTextarea = ({ value, onChange }: TextareaProps) => {
+export const ProductTextArea = ({ value, onChange }: TextareaProps) => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const handleInput = () => {

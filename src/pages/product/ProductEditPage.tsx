@@ -1,15 +1,13 @@
 import { HeaderWithoutSearch } from '../../components/Header';
-import {
-  DayInput,
-  LocationInput,
-  PriceInput,
-  ProductInput,
-  TagInput,
-} from './components/input';
-import { ProductTextarea } from './components/textarea';
 import { ImageUploader } from './components/ImageUploader';
 import { useState } from 'react';
 import { CategoryDropdowns } from './components/Dropdown';
+import { ProductInput } from './components/input/ProductInput';
+import { TagInput } from './components/input/TagInput';
+import { PriceInput } from './components/input/PriceInput';
+import { ProductTextArea } from './components/textarea/ProductTextArea';
+import { LocationInput } from './components/input/LocationInput';
+import { DayInput } from './components/input/DayInput';
 
 export const ProductEditPage = () => {
   const [title, setTitle] = useState<string>('');
@@ -82,7 +80,7 @@ export const ProductEditPage = () => {
             }
           />
           <CategoryDropdowns />
-          <ProductTextarea
+          <ProductTextArea
             value={description}
             onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
               setDescription(e.target.value)
