@@ -1,5 +1,4 @@
 import { HeaderWithoutSearch } from '@/components/Header';
-import { ReactComponent as Dropdown } from '@/assets/svgs/dropdown.svg';
 import { ReactComponent as Star } from '@/assets/svgs/star.svg';
 import product1 from '@/assets/images/product1.jpeg';
 import profile from '@/assets/images/profile.png';
@@ -7,6 +6,13 @@ import { ProductStatusChip } from '@/components/Chips';
 import { NavigateButton, ProductRelatedButton } from './components/button';
 import { useNavigate } from 'react-router-dom';
 import { ReviewCard } from './components/ReviewCard';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 
 export const ProductViewPage = () => {
   const navigate = useNavigate();
@@ -62,25 +68,20 @@ export const ProductViewPage = () => {
           </div>
         </div>
 
-        <div className="mb-[46px] flex space-x-[66px]">
-          <div className="flex items-center space-x-5">
-            <Dropdown
-              width="15"
-              height="25"
-              viewBox="0 0 14 8"
-              className="rotate-90"
-            />
-            <img
-              src={product1}
-              alt="product"
-              className="min-h-[300px] max-w-[400px]"
-            />
-            <Dropdown
-              width="15"
-              height="25"
-              viewBox="0 0 14 8"
-              className="-rotate-90"
-            />
+        <div className="mx-[38px] mb-[46px] flex space-x-[120px]">
+          <div className="flex w-full items-center">
+            <Carousel>
+              <CarouselContent>
+                <CarouselItem>
+                  <img src={product1} alt="product" className="w-full" />
+                </CarouselItem>
+                <CarouselItem>
+                  <img src={product1} alt="product" className="w-full" />
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
 
           <div className="flex w-full flex-col space-y-8 pr-10">
