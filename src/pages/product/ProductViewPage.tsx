@@ -1,11 +1,10 @@
 import { HeaderWithoutSearch } from '@/components/Header';
 import { ReactComponent as Dropdown } from '@/assets/svgs/dropdown.svg';
 import { ReactComponent as Star } from '@/assets/svgs/star.svg';
-import {ReactComponent as Dropdown2} from '@/assets/svgs/dropdown2.svg';
 import product1 from '@/assets/images/product1.jpeg';
 import profile from '@/assets/images/profile.png';
 import { ProductStatusChip } from '@/components/Chips';
-import { NavigateButton } from './components/button';
+import { NavigateButton, ProductRelatedButton } from './components/button';
 import { useNavigate } from 'react-router-dom';
 import { ReviewCard } from './components/ReviewCard';
 
@@ -16,17 +15,27 @@ export const ProductViewPage = () => {
     navigate('/');
   };
 
+  const handleNavigateEdit = () => {
+    navigate('/product/1/edit');
+  };
+
   return (
     <div className="min-h-screen flex w-screen pb-[133px]">
       <HeaderWithoutSearch />
       <div className="flex w-full flex-col px-[220px] pt-[110px]">
-        <div className="flex justify-end">
-          <Dropdown2
-            className="mb-5 rounded-full px-[10px] py-[6px] shadow-md"
-          />
+        <div className="flex justify-end space-x-2">
+          <ProductRelatedButton
+            onClick={handleNavigateEdit}
+            className="text-neutral-30"
+          >
+            수정하기
+          </ProductRelatedButton>
+          <ProductRelatedButton className="text-[#D82D30]">
+            삭제하기
+          </ProductRelatedButton>
         </div>
 
-        <div className="mb-10 flex flex-col items-start border-b px-[23px] pb-[15px]">
+        <div className="mb-12 flex flex-col items-start border-b px-[23px] pb-[15px]">
           <div className="mb-4 flex w-full space-x-3">
             <ProductStatusChip bgColor="#00D179">대여 가능</ProductStatusChip>
             <div className="flex space-x-[6px]">
