@@ -1,5 +1,5 @@
-import { ReactComponent as DefaultProfile } from '@/assets/defaultProfile.svg';
-import { ReactComponent as Star } from '@/assets/star.svg';
+import { ReactComponent as DefaultProfile } from '@/assets/svgs/defaultProfile.svg';
+import { ReactComponent as Star } from '@/assets/svgs/star.svg';
 
 export const ReviewCard = () => {
   return (

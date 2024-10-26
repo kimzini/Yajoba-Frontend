@@ -1,9 +1,9 @@
 import { HeaderWithoutSearch } from '@/components/Header';
-import { ReactComponent as Dropdown } from '@/assets/dropdown.svg';
-import { ReactComponent as Star } from '@/assets/star.svg';
-import product1 from '@/assets/product1.jpeg';
-import Dropdown2 from '@/assets/dropdown2.svg';
-import profile from '@/assets/profile.png';
+import { ReactComponent as Dropdown } from '@/assets/svgs/dropdown.svg';
+import { ReactComponent as Star } from '@/assets/svgs/star.svg';
+import {ReactComponent as Dropdown2} from '@/assets/svgs/dropdown2.svg';
+import product1 from '@/assets/images/product1.jpeg';
+import profile from '@/assets/images/profile.png';
 import { ProductStatusChip } from '@/components/Chips';
 import { NavigateButton } from './components/button';
 import { useNavigate } from 'react-router-dom';
@@ -21,8 +21,7 @@ export const ProductViewPage = () => {
       <HeaderWithoutSearch />
       <div className="flex w-full flex-col px-[220px] pt-[110px]">
         <div className="flex justify-end">
-          <img
-            src={Dropdown2}
+          <Dropdown2
             className="mb-5 rounded-full px-[10px] py-[6px] shadow-md"
           />
         </div>

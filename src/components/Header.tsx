@@ -1,5 +1,5 @@
 import { useActiveLink } from '../hooks/useActiveLink';
-import logo from '../assets/logo.png';
+import logo from '@/assets/images/logo.png';
 
 export const HeaderWithSearch = () => {
   const isProductPage = useActiveLink('/product');

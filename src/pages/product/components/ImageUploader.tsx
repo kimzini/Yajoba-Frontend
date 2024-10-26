@@ -1,5 +1,5 @@
 import { useState, ChangeEvent } from 'react';
-import plus from '../../../assets/plus.svg';
+import { ReactComponent as Plus } from '@/assets/svgs/plus.svg';
 
 interface ImageUploaderProps {
   maxImages?: number;
@@ -50,7 +50,7 @@ export const ImageUploader = ({
               onChange={handleImageUpload}
               className="hidden"
             />
-            <img src={plus} alt="add picture" />
+            <Plus />
             <span className="font-regular text-small16 text-neutral-40">
               {uploadedImages.length}/{maxImages}
             </span>

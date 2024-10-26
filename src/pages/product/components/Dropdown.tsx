@@ -6,8 +6,8 @@ import {
   DropdownMenuItem,
 } from '@/components/ui/dropdown-menu';
 import { useEffect, useState } from 'react';
-import dropdown from '@/assets/dropdown.svg';
-import rightarray from '@/assets/rightarray.svg';
+import { ReactComponent as Dropdown } from '@/assets/svgs/dropdown.svg';
+import { ReactComponent as RightArray } from '@/assets/svgs/rightarray.svg';
 
 export const CategoryDropdowns = () => {
   const [categories, setCategories] = useState<string[]>([]);
@@ -53,7 +53,7 @@ export const CategoryDropdowns = () => {
           <DropdownMenuTrigger asChild>
             <Button className="font-regular flex justify-between border border-neutral-80 bg-neutral-100 px-[3rem] py-[1.5rem] text-medium20 text-neutral-40">
               {selectedMainCategory}
-              <img src={dropdown} alt="dropdown" />
+              <Dropdown />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-neutral-100 py-4 text-medium18 font-light text-neutral-30">
@@ -73,14 +73,14 @@ export const CategoryDropdowns = () => {
           </DropdownMenuContent>
         </DropdownMenu>
 
-        <img src={rightarray} alt="next" />
+       <RightArray />
 
         {/* 중분류 */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button className="font-regular flex justify-between border border-neutral-80 bg-neutral-100 px-[3rem] py-[1.5rem] text-medium20 text-neutral-40">
               {selectedSubCategory}
-              <img src={dropdown} alt="dropdown" />
+              <Dropdown />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-neutral-100 py-4 text-medium18 font-light text-neutral-30">
@@ -99,14 +99,14 @@ export const CategoryDropdowns = () => {
           </DropdownMenuContent>
         </DropdownMenu>
 
-        <img src={rightarray} alt="next" />
+        <RightArray />
 
         {/* 소분류 */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button className="font-regular flex justify-between border border-neutral-80 bg-neutral-100 px-[3rem] py-[1.5rem] text-medium20 text-neutral-40">
               {selectedMinorCategory}
-              <img src={dropdown} alt="dropdown" />
+              <Dropdown />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-neutral-100 py-4 text-medium18 font-light text-neutral-30">
