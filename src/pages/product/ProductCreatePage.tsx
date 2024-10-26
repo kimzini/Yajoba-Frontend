@@ -10,7 +10,6 @@ export const ProductCreatePage = () => {
   const [productName, setProductName] = useState<string>('');
   const [description, setDescription] = useState<string>('');
   const [price, setPrice] = useState<string>('');
-  const [day, setDay] = useState<string>('');
   const [location, setLocation] = useState<string>('');
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
@@ -26,7 +25,6 @@ export const ProductCreatePage = () => {
       productName,
       description,
       price,
-      day,
       location,
       startDate: startDate ? startDate.toISOString().split('T')[0] : '',
       endDate: endDate ? endDate.toISOString().split('T')[0] : '',
@@ -37,10 +35,10 @@ export const ProductCreatePage = () => {
   };
 
   return (
-    <div className="flex h-screen w-screen">
+    <div className="flex min-h-screen w-screen">
       {/* 토큰 받았냐 안 받았냐에 따라 헤더 다르게 나옴 */}
       <HeaderWithoutSearch />
-      <div className="flex w-full flex-col px-[20rem] py-[5.5rem]">
+      <div className="flex w-full flex-col px-[220px] py-[60px]">
         <div className="flex w-full border-b border-neutral-80 px-[1rem] pb-[2rem] pt-[4rem] text-xxlarge32 font-semibold text-neutral-0">
           상품 등록하기
         </div>
@@ -52,7 +50,6 @@ export const ProductCreatePage = () => {
               setTitle(e.target.value)
             }
           />
-          <ImageUploader maxImages={10} onImagesChange={handleImagesUpload} />
           <ProductInput
             title="상품명"
             value={productName}
@@ -60,6 +57,15 @@ export const ProductCreatePage = () => {
               setProductName(e.target.value)
             }
           />
+          <ImageUploader maxImages={10} onImagesChange={handleImagesUpload} />
+
+          <PriceInput
+            value={price}
+            onChangePrice={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setPrice(e.target.value)
+            }
+          />
+
           <CategoryDropdowns />
           <ProductTextarea
             value={description}
@@ -68,14 +74,6 @@ export const ProductCreatePage = () => {
             }
           />
 
-          <PriceInput
-            value={price}
-            onChangePrice={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setPrice(e.target.value)
-            }
-            selectedDay={day}
-            onDayChange={(selectedDay: string) => setDay(selectedDay)}
-          />
           <ProductInput
             title="위치"
             value={location}
@@ -92,7 +90,7 @@ export const ProductCreatePage = () => {
 
           <button
             onClick={handleSubmit}
-            className="mx-[1rem] mt-6 mb-[5rem] rounded-xs bg-primary-dark px-4 py-3 text-medium18 text-white"
+            className="mx-[1rem] mb-[5rem] mt-6 rounded-xs bg-primary-dark px-4 py-3 text-medium18 text-white"
           >
             상품 등록
           </button>
