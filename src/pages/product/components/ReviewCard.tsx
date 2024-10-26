@@ -9,12 +9,17 @@ export const ReviewCard = () => {
       </div>
       <div className="flex w-full flex-col space-y-2">
         <div className="flex justify-between">
-          <div className="flex">
+          <div className="flex items-end">
             <span className="mr-3 text-small16 font-semibold text-neutral-0">
               시험끝났다핑
             </span>
-            <Star />
-            <span className="font-regular ml-2 text-xsmall14 text-neutral-0">
+            <Star
+              width="16"
+              height="17"
+              viewBox="0 0 22 23"
+              className="self-center"
+            />
+            <span className="font-regular ml-1 pt-[1px] text-small16 text-neutral-0">
               1.0
             </span>
           </div>

@@ -163,7 +163,7 @@ export const ProductViewPage = () => {
           </NavigateButton>
         </div>
 
-        <div className="mb-10 border-b py-[10px]">
+        <div className="mb-7 border-b py-[10px]">
           <span className="px-[23px] text-large24 font-semibold text-neutral-0">
             맥북 실버 프로 후기
           </span>
