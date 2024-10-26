@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 import plus from '../../../assets/plus.svg';
 
 interface ImageUploaderProps {
@@ -6,13 +6,13 @@ interface ImageUploaderProps {
   onImagesChange: (newImages: string[]) => void;
 }
 
-export const ImageUploader: React.FC<ImageUploaderProps> = ({
+export const ImageUploader = ({
   maxImages = 10,
   onImagesChange,
-}) => {
+}: ImageUploaderProps) => {
   const [uploadedImages, setUploadedImages] = useState<string[]>([]);
 
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageUpload = (event: ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (files && files.length > 0) {
       const newImages = Array.from(files).map((file) =>
@@ -43,7 +43,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
           </div>
         ))}
         {uploadedImages.length < maxImages && (
-          <label className="flex w-[12rem] h-[12rem] cursor-pointer flex-col items-center justify-center gap-[1rem] rounded-sm border border-neutral-80 bg-neutral-100">
+          <label className="flex h-[12rem] w-[12rem] cursor-pointer flex-col items-center justify-center gap-[1rem] rounded-sm border border-neutral-80 bg-neutral-100">
             <input
               type="file"
               accept="image/*"

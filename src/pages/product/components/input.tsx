@@ -29,12 +29,12 @@ interface PriceInputProps {
   onDayChange: (selectedDay: string) => void;
 }
 
-export const PriceInput: React.FC<PriceInputProps> = ({
+export const PriceInput = ({
   value,
   onChangePrice,
   selectedDay,
   onDayChange,
-}) => {
+}: PriceInputProps) => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
@@ -57,30 +57,15 @@ export const PriceInput: React.FC<PriceInputProps> = ({
         </div>
 
         <div className="flex gap-[0.6rem]">
-          <DayButton
-            isChecked={selectedDay === '시간'}
-            onClick={() => onDayChange('시간')}
-          >
-            시간
-          </DayButton>
-          <DayButton
-            isChecked={selectedDay === '일'}
-            onClick={() => onDayChange('일')}
-          >
-            일
-          </DayButton>
-          <DayButton
-            isChecked={selectedDay === '주'}
-            onClick={() => onDayChange('주')}
-          >
-            주
-          </DayButton>
-          <DayButton
-            isChecked={selectedDay === '월'}
-            onClick={() => onDayChange('월')}
-          >
-            월
-          </DayButton>
+          {['시간', '일', '주', '월'].map((day) => (
+            <DayButton
+              key={day}
+              isChecked={selectedDay === day}
+              onClick={() => onDayChange(day)}
+            >
+              {day}
+            </DayButton>
+          ))}
         </div>
       </div>
     </div>
@@ -94,38 +79,38 @@ interface DayInputProps {
   onEndDateChange: (date: Date | null) => void;
 }
 
-export const DayInput: React.FC<DayInputProps> = ({
+export const DayInput = ({
   startDate,
   endDate,
   onStartDateChange,
   onEndDateChange,
-}) => {
+}: DayInputProps) => {
   return (
     <div className="flex flex-col gap-4 px-[1rem]">
       <span className="text-medium18 text-neutral-0">대여 가능 기간</span>
       <div className="flex items-center gap-8">
-        <div className='relative'>
+        <div className="relative">
           <DatePicker
             selected={startDate ?? undefined}
             onChange={(date) => onStartDateChange(date)}
             selectsStart
-            startDate={startDate ?? undefined} 
-            endDate={endDate ?? undefined}    
+            startDate={startDate ?? undefined}
+            endDate={endDate ?? undefined}
             dateFormat="yyyy-MM-dd"
-            className='flex items-center rounded-xs border border-neutral-80 bg-neutral-100 px-[1rem] py-[0.75rem] focus:outline-none'
+            className="flex items-center rounded-xs border border-neutral-80 bg-neutral-100 px-[1rem] py-[0.75rem] focus:outline-none"
           />
         </div>
         <span className="text-medium18 text-placeholder">~</span>
-        <div className='relative'>
+        <div className="relative">
           <DatePicker
-            selected={endDate ?? undefined}  
+            selected={endDate ?? undefined}
             onChange={(date) => onEndDateChange(date)}
             selectsEnd
-            startDate={startDate ?? undefined}  
-            endDate={endDate ?? undefined}      
-            minDate={startDate ?? undefined}   
+            startDate={startDate ?? undefined}
+            endDate={endDate ?? undefined}
+            minDate={startDate ?? undefined}
             dateFormat="yyyy-MM-dd"
-            className='flex items-center rounded-xs border border-neutral-80 bg-neutral-100 px-[1rem] py-[0.75rem] focus:outline-none'
+            className="flex items-center rounded-xs border border-neutral-80 bg-neutral-100 px-[1rem] py-[0.75rem] focus:outline-none"
           />
         </div>
       </div>
