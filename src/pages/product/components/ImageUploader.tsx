@@ -1,4 +1,6 @@
 import { useState, ChangeEvent } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 import { ReactComponent as Plus } from '@/assets/svgs/plus.svg';
 
 interface ImageUploaderProps {
@@ -27,36 +29,42 @@ export const ImageUploader = ({
   };
 
   return (
-    <div className="flex flex-col gap-4 overflow-x-auto px-[1rem]">
+    <div className="flex flex-col gap-4 px-[1rem] w-full">
       <span className="text-medium18 text-neutral-0">상품 사진</span>
-      <div className="flex gap-[1rem]">
+      <Swiper
+        spaceBetween={16}
+        slidesPerView={'auto'}
+        className="w-full"
+      >
         {uploadedImages.map((image, index) => (
-          <div
-            key={index}
-            className="flex max-h-[12rem] max-w-[12rem] items-center justify-center overflow-hidden rounded-sm border border-neutral-80 bg-neutral-100"
-          >
-            <img
-              src={image}
-              alt={`image ${index + 1}`}
-              className="max-h-[12rem] max-w-[12rem] object-cover"
-            />
-          </div>
+          <SwiperSlide key={index} style={{ width: '12rem' }}>
+            <div className="flex h-[12rem] w-[12rem] items-center justify-center overflow-hidden rounded-sm border border-neutral-80 bg-neutral-100">
+              <img
+                src={image}
+                alt={`image ${index + 1}`}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </SwiperSlide>
         ))}
+        
         {uploadedImages.length < maxImages && (
-          <label className="flex h-[12rem] w-[12rem] cursor-pointer flex-col items-center justify-center gap-[1rem] rounded-sm border border-neutral-80 bg-neutral-100">
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleImageUpload}
-              className="hidden"
-            />
-            <Plus />
-            <span className="font-regular text-small16 text-neutral-40">
-              {uploadedImages.length}/{maxImages}
-            </span>
-          </label>
+          <SwiperSlide style={{ width: '12rem' }}>
+            <label className="flex h-[12rem] w-[12rem] cursor-pointer flex-col items-center justify-center gap-[1rem] rounded-sm border border-neutral-80 bg-neutral-100">
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageUpload}
+                className="hidden"
+              />
+              <Plus />
+              <span className="font-regular text-small16 text-neutral-40">
+                {uploadedImages.length}/{maxImages}
+              </span>
+            </label>
+          </SwiperSlide>
         )}
-      </div>
+      </Swiper>
     </div>
   );
 };
