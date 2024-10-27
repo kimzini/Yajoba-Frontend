@@ -1,5 +1,5 @@
 import { useActiveLink } from '../hooks/useActiveLink';
-import logo from '../assets/logo.png';
+import logo from '@/assets/images/logo.png';
 
 export const HeaderWithSearch = () => {
   const isProductPage = useActiveLink('/product');
@@ -7,7 +7,7 @@ export const HeaderWithSearch = () => {
   const isMypage = useActiveLink('/mypage');
 
   return (
-    <div className="bg-static-100 fixed top-0 z-30 w-screen border-b border-neutral-80 px-10 shadow-[2px_0px_2px_1px_rgba(0,0,0,0.05)]">
+    <div className="bg-static-100 fixed top-0 z-30 w-screen bg-primary-0 border-b border-neutral-80 px-10 shadow-[2px_0px_2px_1px_rgba(0,0,0,0.05)]">
       <div className="flex h-[4.8rem] items-center justify-between">
         <div className="flex items-center gap-[2rem]">
           <a className="h-[2.2rem] w-full" href="/">
@@ -118,7 +118,7 @@ export const HeaderWithoutSearch = () => {
   const isMypage = useActiveLink('/mypage');
 
   return (
-    <div className="bg-static-100 fixed top-0 z-30 w-screen border-b border-neutral-80 px-10 shadow-[2px_0px_2px_1px_rgba(0,0,0,0.05)]">
+    <div className="bg-static-100 fixed top-0 z-30 w-screen bg-primary-0 border-b border-neutral-80 px-10 shadow-[2px_0px_2px_1px_rgba(0,0,0,0.05)]">
       <div className="flex h-[4.85rem] items-center justify-between">
         <div className="flex items-center gap-4">
           <a className="h-[2.2rem] w-full" href="/">
@@ -199,7 +199,7 @@ export const HeaderWithoutSearch = () => {
 
 export const LoginHeader = () => {
   return (
-    <div className="bg-static-100 fixed top-0 z-30 w-screen border-b border-neutral-80 px-10 shadow-[2px_0px_2px_1px_rgba(0,0,0,0.05)]">
+    <div className="bg-static-100 fixed bg-primary-0 top-0 z-30 w-screen border-b border-neutral-80 px-10 shadow-[2px_0px_2px_1px_rgba(0,0,0,0.05)]">
       <div className="flex h-[4.85rem] items-center justify-between">
         <div className="flex items-center gap-4">
           <a className="h-[2.2rem] w-full" href="/">

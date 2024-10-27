@@ -1,5 +1,5 @@
 import { LoginHeader } from '../../components/Header';
-import kakao from '../../assets/kakao.png';
+import kakao from '@/assets/images/kakao.png';
 // import google from '../../assets/google.png';
 // import naver from '../../assets/naver.png';
 
