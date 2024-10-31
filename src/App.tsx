@@ -5,6 +5,7 @@ import { ProfileInput } from './pages/auth/ProfileInput';
 import { ProductCreatePage } from './pages/product/ProductCreatePage';
 import { ProductEditPage } from './pages/product/ProductEditPage';
 import { ProductViewPage } from './pages/product/ProductViewPage';
+import { ChatPage } from './pages/chat/ChatPage';
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
         <Route path="/product" element={<ProductCreatePage />} />
         <Route path="/product/:id/edit" element={<ProductEditPage />} />
         <Route path="/product/:id" element={<ProductViewPage />} />
-        <Route path="/chat" element={<></>} />
+        <Route path="/chat" element={<ChatPage />} />
         <Route path="/mypage" element={<></>} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
