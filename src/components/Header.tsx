@@ -4,7 +4,7 @@ import logo from '@/assets/images/logo.png';
 export const HeaderWithSearch = () => {
   const isProductPage = useActiveLink('/product');
   const isChatPage = useActiveLink('/chat');
-  const isMypage = useActiveLink('/mypage');
+  const isMypage = useActiveLink('/profile');
 
   return (
     <div className="bg-static-100 fixed top-0 z-30 w-screen bg-primary-0 border-b border-neutral-80 px-10 shadow-[2px_0px_2px_1px_rgba(0,0,0,0.05)]">
@@ -87,7 +87,7 @@ export const HeaderWithSearch = () => {
 
           <a
             className={`flex cursor-pointer items-center gap-2 text-medium18 font-semibold ${isMypage ? 'text-primary-dark' : 'text-neutral-10'}`}
-            href="/mypage"
+            href="/profile"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +115,7 @@ export const HeaderWithSearch = () => {
 export const HeaderWithoutSearch = () => {
   const isProductPage = useActiveLink('/product');
   const isChatPage = useActiveLink('/chat');
-  const isMypage = useActiveLink('/mypage');
+  const isMypage = useActiveLink('/profile');
 
   return (
     <div className="bg-static-100 fixed top-0 z-30 w-screen bg-primary-0 border-b border-neutral-80 px-10 shadow-[2px_0px_2px_1px_rgba(0,0,0,0.05)]">
@@ -172,7 +172,7 @@ export const HeaderWithoutSearch = () => {
 
           <a
             className={`flex cursor-pointer items-center gap-2 text-medium18 font-semibold ${isMypage ? 'text-primary-dark' : 'text-neutral-10'}`}
-            href="/mypage"
+            href="/profile"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
