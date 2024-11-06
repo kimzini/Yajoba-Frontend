@@ -2,7 +2,7 @@ import { HeaderWithoutSearch } from '@/components/Header';
 import { ReactComponent as Star } from '@/assets/svgs/star.svg';
 import product1 from '@/assets/images/product1.jpeg';
 import profile from '@/assets/images/profile.png';
-import { ProductStatusChip } from '@/components/Chips';
+import { ReadyToRentChip } from '@/components/ProductStatusChips';
 import { useNavigate } from 'react-router-dom';
 import { ReviewCard } from './components/ReviewCard';
 import {
@@ -26,9 +26,7 @@ export const ProductViewPage = () => {
     navigate('/product/1/edit');
   };
 
-  const tags = [
-    '#가전제품', '#노트북', '#애플', '#맥북', '#실버'
-  ];
+  const tags = ['#가전제품', '#노트북', '#애플', '#맥북', '#실버'];
 
   return (
     <div className="min-h-screen flex w-screen pb-[133px]">
@@ -48,7 +46,7 @@ export const ProductViewPage = () => {
 
         <div className="mb-12 flex flex-col items-start border-b px-[23px] pb-[15px]">
           <div className="mb-4 flex w-full space-x-3">
-            <ProductStatusChip bgColor="#00D179">대여 가능</ProductStatusChip>
+            <ReadyToRentChip />
             <div className="flex space-x-[6px]">
               <Star className="self-center" />
               <span className="pt-1 text-large22 font-medium text-neutral-20">
@@ -57,15 +55,15 @@ export const ProductViewPage = () => {
             </div>
           </div>
           <div className="flex w-full justify-between">
-            <div className='flex flex-col'>
+            <div className="flex flex-col">
               <span className="text-xlarge28 font-semibold text-neutral-0">
                 맥북 프로 실버 완전 싸게 대여하세요~
               </span>
-              <div className="flex gap-2 mt-2">
+              <div className="mt-2 flex gap-2">
                 {tags.map((tag, index) => (
                   <span
                     key={index}
-                    className="bg-neutral-100 px-2 py-1 rounded-md text-neutral-0 text-xsmall14"
+                    className="rounded-md bg-neutral-100 px-2 py-1 text-xsmall14 text-neutral-0"
                   >
                     {tag}
                   </span>
