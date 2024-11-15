@@ -11,6 +11,8 @@ import product3 from '@/assets/images/product3.jpeg';
 import product4 from '@/assets/images/product4.jpeg';
 import product5 from '@/assets/images/product5.jpeg';
 import { ProfileStatusChip } from '@/components/ProfileStatusChip';
+import { useState } from 'react';
+import { ProfileModifyModal } from '@/components/Modal/ProfileModifyModal';
 
 const products = [
   {
@@ -41,8 +43,10 @@ const products = [
 ];
 
 export const ProfilePage = () => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
   return (
-    <div className="min-h-screen flex w-screen">
+    <div className="min-h-screen relative flex w-screen">
       <HeaderWithSearch />
       <div className="w-full flex-col px-[240px] py-[120px]">
         <div className="mb-[35px] flex items-center">
@@ -60,7 +64,7 @@ export const ProfilePage = () => {
                     님
                   </span>
                 </div>
-                <EditProfile />
+                <EditProfile onClick={() => setIsModalOpen(true)} />
               </div>
               <div className="flex gap-5">
                 <ProfileStatusChip title="대여상품" number={8} />
@@ -68,6 +72,10 @@ export const ProfilePage = () => {
                 <ProfileStatusChip title="작성후기" number={16} />
               </div>
             </div>
+
+            {isModalOpen && (
+              <ProfileModifyModal setIsModalOpen={setIsModalOpen} />
+            )}
 
             <div className="flex gap-1">
               <SelfIntroduction />
