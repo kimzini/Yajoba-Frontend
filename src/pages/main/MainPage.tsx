@@ -2,7 +2,6 @@ import { HeaderWithSearch } from '@/components/Header';
 import { ReactComponent as Puzzle } from '@/assets/svgs/puzzle.svg';
 import { ReactComponent as Good } from '@/assets/svgs/good.svg';
 import { ReactComponent as Heart } from '@/assets/svgs/heart.svg';
-import { ReactComponent as Megaphone } from '@/assets/svgs/megaphone.svg';
 import { ProductCard } from '@/components/ProductCard';
 import product1 from '@/assets/images/product1.jpeg';
 import product2 from '@/assets/images/product2.jpeg';
@@ -38,19 +37,13 @@ export const MainPage = () => {
       <HeaderWithSearch />
       <div className="mb-7 flex w-full justify-center pt-[75px]">
         <div className="flex h-[244px] w-full rounded-[10px] bg-secondary-70 shadow-lg">
-          <Puzzle className="z-60 mr-[200px] rounded-[10px]" />
-          <Megaphone
-            width="150"
-            height="150"
-            viewBox="0 0 1000 1000"
-            className="mr-[50px] self-center"
-          />
+          <Puzzle className="z-60 mr-[400px] rounded-[10px]" />
           <div className="flex flex-col items-center justify-center gap-7">
             <span className="text-large24 font-medium text-neutral-100">
               불필요한 소비를 줄이는 공유경제
             </span>
             <span className="text-xxlarge36 font-bold text-neutral-100">
-              Ya!joba로 시작해요!
+              Ya!joba로 시작해볼까요?
             </span>
           </div>
         </div>
@@ -61,7 +54,7 @@ export const MainPage = () => {
             <div className="flex items-end justify-center gap-2">
               <Good width="80" height="83" viewBox="0 0 116 119" />
               <span className="self-end text-xxlarge32 font-semibold text-neutral-0">
-                지금 주목해야할 추천 상품
+                지금 주목해야 할 추천 상품
               </span>
             </div>
           </div>
