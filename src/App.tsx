@@ -7,12 +7,13 @@ import { ProductEditPage } from './pages/product/ProductEditPage';
 import { ProductViewPage } from './pages/product/ProductViewPage';
 import { ProfilePage } from './pages/profile/ProfilePage';
 import { ChatPage } from './pages/chat/ChatPage';
+import { MainPage } from './pages/main/MainPage';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<></>} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/product" element={<ProductCreatePage />} />
         <Route path="/product/:id/edit" element={<ProductEditPage />} />
         <Route path="/product/:id" element={<ProductViewPage />} />
