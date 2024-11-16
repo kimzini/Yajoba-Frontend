@@ -130,6 +130,7 @@ export const ProfileModifyModal = ({ setIsModalOpen }: ModalProps) => {
                 width: 600,
                 height: 120,
                 className: 'signatureCanvas',
+                style: { width: "100%" },
               }}
             />
           </div>
