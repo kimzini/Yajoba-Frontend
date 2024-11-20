@@ -1,6 +1,4 @@
 import { ReactComponent as Puzzle } from '@/assets/svgs/puzzle.svg';
-import { ReactComponent as Good } from '@/assets/svgs/good.svg';
-import { ReactComponent as Heart } from '@/assets/svgs/heart.svg';
 import product1 from '@/assets/images/product1.jpeg';
 import product2 from '@/assets/images/product2.jpeg';
 import product3 from '@/assets/images/product3.jpeg';
@@ -52,7 +50,7 @@ const MainPage = () => {
         <div className="mb-[30px] flex-col">
           <div className="mb-[10px] p-3">
             <div className="flex items-end justify-center gap-2">
-              <Good width="80" height="83" viewBox="0 0 116 119" />
+              {/* <Good width="80" height="83" viewBox="0 0 116 119" /> */}
               <span className="self-end text-xxlarge32 font-semibold text-neutral-0">
                 지금 주목해야 할 추천 상품
               </span>
@@ -74,7 +72,7 @@ const MainPage = () => {
         <div className="mb-[30px] flex-col">
           <div className="mb-[10px] p-3">
             <div className="flex items-end justify-center gap-2">
-              <Heart width="66" height="50" viewBox="0 0 75 59" />
+              {/* <Heart width="66" height="50" viewBox="0 0 75 59" /> */}
               <span className="text-center text-xxlarge32 font-semibold text-neutral-0">
                 인기 상품
               </span>
