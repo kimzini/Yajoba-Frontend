@@ -8,7 +8,8 @@ import { ProductViewPage } from './pages/product/ProductViewPage';
 import { ProfilePage } from './pages/profile/ProfilePage';
 import { ChatPage } from './pages/chat/ChatPage';
 import { MainPage } from './pages/main/MainPage';
-
+import DefaultContractPage from './pages/contract/DefaultPage';
+import CompletedContractPage from './pages/contract/CompletedPage';
 function App() {
   return (
     <Router>
@@ -22,6 +23,8 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/signup/profile" element={<ProfileInput />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/contract/Input" element={<DefaultContractPage />} />
+        <Route path="/contract/Completed" element={<CompletedContractPage />} />
       </Routes>
     </Router>
   );
