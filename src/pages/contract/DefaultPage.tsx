@@ -1,4 +1,4 @@
-import { HeaderWithoutSearch } from '@/components/Header';
+import { HeaderWithoutSearch } from '@/components/common/Header';
 import { ContractInput } from './components/ContractInput'
 import { useState } from "react";
 

@@ -1,4 +1,4 @@
-import { HeaderWithoutSearch } from '@/components/Header';
+import { HeaderWithoutSearch } from '@/components/common/Header';
 import { ContractCompleted } from './components/ContractCompleted'
 import { useState } from "react";
 
