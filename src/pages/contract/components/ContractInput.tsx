@@ -84,7 +84,10 @@ export const ContractInput: React.FC<ContractProps> = ({
           name="lender"
           value={formValues.lender}
           onChange={handleInputChange}
-          className="bg-transparent focus:outline-none"
+          className="bg-transparent focus:outline-black outline-dashed outline-[1px]"
+          style={{
+            width: `${formValues.lender.length + 3}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
+          }}
         />
       </p>
       <p>
@@ -94,7 +97,10 @@ export const ContractInput: React.FC<ContractProps> = ({
           name="borrower"
           value={formValues.borrower}
           onChange={handleInputChange}
-          className="bg-transparent focus:outline-none"
+          className="bg-transparent focus:outline-black outline-dashed outline-[1px]"
+          style={{
+            width: `${formValues.borrower.length + 3}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
+          }}
         />
       </p>
 
@@ -117,7 +123,10 @@ export const ContractInput: React.FC<ContractProps> = ({
                 name="itemName"
                 value={formValues.itemName}
                 onChange={handleInputChange}
-                className="bg-transparent focus:outline-none w-full"
+                className="bg-transparent focus:outline-black outline-dashed outline-[1px]"
+          style={{
+            width: `${formValues.borrower.length + 3}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
+          }}
               />
             </td>
             <td className="border border-gray-400 px-4 py-2">
@@ -126,7 +135,8 @@ export const ContractInput: React.FC<ContractProps> = ({
                 name="specifications"
                 value={formValues.specifications}
                 onChange={handleInputChange}
-                className="bg-transparent focus:outline-none w-full"
+                className="bg-transparent focus:outline-black w-full outline-dashed outline-[1px]"
+                
               />
             </td>
             <td className="border border-gray-400 px-4 py-2">
@@ -135,7 +145,7 @@ export const ContractInput: React.FC<ContractProps> = ({
                 name="quantity"
                 value={formValues.quantity}
                 onChange={handleInputChange}
-                className="bg-transparent focus:outline-none w-full"
+                className="bg-transparent focus:outline-black w-full outline-dashed outline-[1px]"
               />
             </td>
             <td className="border border-gray-400 px-4 py-2">
@@ -144,7 +154,7 @@ export const ContractInput: React.FC<ContractProps> = ({
                 name="condition"
                 value={formValues.condition}
                 onChange={handleInputChange}
-                className="bg-transparent focus:outline-none w-full"
+                className="bg-transparent focus:outline-black w-full outline-dashed outline-[1px]"
               />
             </td>
             <td className="border border-gray-400 px-4 py-2">
@@ -153,7 +163,7 @@ export const ContractInput: React.FC<ContractProps> = ({
                 name="notes"
                 value={formValues.notes}
                 onChange={handleInputChange}
-                className="bg-transparent focus:outline-none w-full"
+                className="bg-transparent focus:outline-black w-full outline-dashed outline-[1px]"
               />
             </td>
           </tr>
@@ -170,7 +180,7 @@ export const ContractInput: React.FC<ContractProps> = ({
           name="rentalEndDate"
           value={formValues.rentalEndDate}
           onChange={handleInputChange}
-          className="bg-transparent min-w-[50px] w-fit focus:outline-none"
+          className="bg-transparent min-w-[50px] w-fit focus:outline-black outline-dashed outline-[1px]"
           placeholder="입력"
           style={{
             width: `${formValues.rentalEndDate.length + 0}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
@@ -182,32 +192,32 @@ export const ContractInput: React.FC<ContractProps> = ({
           name="rentalPlace"
           value={formValues.rentalPlace}
           onChange={handleInputChange}
-          className="bg-transparent min-w-[50px] w-fit focus:outline-none"
+          className="bg-transparent min-w-[50px] w-fit focus:outline-black outline-dashed outline-[1px]"
           placeholder="입력"
           style={{
             width: `${formValues.rentalPlace.length + 0}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
           }}
         />{" "}로 정한다. 위 대여장소의 상세주소는 다음과 같다.
       </p>
-      <p>- 상세주소: </p>{" "}
+      <p>- 상세주소: {" "}
         <input
-          type="text"
+          type="string"
           name="rentalDetailAddress"
           value={formValues.rentalDetailAddress}
           onChange={handleInputChange}
-          className="bg-transparent min-w-[50px] w-fit focus:outline-none"
+          className="bg-transparent min-w-[50px] w-fit focus:outline-black outline-dashed outline-[1px]"
           placeholder="입력"
           style={{
-            width: `${formValues.rentalDetailAddress.length + 1}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
+            width: `${formValues.rentalDetailAddress.length + 5}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
           }}
-        />{" "}      <p className="mt-2">
+        />{" "}</p><p className="mt-2">
         2. 본 계약에 따라 차용인은 임대기간 종료 후 {" "}
         <input
           type="text"
           name="returnDate"
           value={formValues.returnDate}
           onChange={handleInputChange}
-          className="bg-transparent min-w-[50px] w-fit focus:outline-none"
+          className="bg-transparent min-w-[50px] w-fit focus:outline-black outline-dashed outline-[1px]"
           placeholder="입력"
           style={{
             width: `${formValues.returnDate.length + 0}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
@@ -218,7 +228,7 @@ export const ContractInput: React.FC<ContractProps> = ({
           name="returnPlace"
           value={formValues.returnPlace}
           onChange={handleInputChange}
-          className="bg-transparent min-w-[50px] w-fit focus:outline-none"
+          className="bg-transparent min-w-[50px] w-fit focus:outline-black outline-dashed outline-[1px]"
           placeholder="입력"
           style={{
             width: `${formValues.rentalEndDate.length + 0}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
@@ -232,10 +242,10 @@ export const ContractInput: React.FC<ContractProps> = ({
           name="returnDetailAddress"
           value={formValues.returnDetailAddress}
           onChange={handleInputChange}
-          className="bg-transparent min-w-[50px] w-fit focus:outline-none"
+          className="bg-transparent min-w-[50px] w-fit focus:outline-black outline-dashed outline-[1px]"
           placeholder="입력"
           style={{
-            width: `${formValues.returnDetailAddress.length + 0}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
+            width: `${formValues.returnDetailAddress.length + 5}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
           }}
         />{" "}</p>
 
@@ -243,11 +253,11 @@ export const ContractInput: React.FC<ContractProps> = ({
       <p>
         차용물품에 대한 임대료는{" "}
         <input
-          type="number"
+          type="text"
           name="rentalFee"
           value={formValues.rentalFee}
           onChange={handleInputChange}
-          className="bg-transparent min-w-[50px] w-fit focus:outline-none"
+          className="bg-transparent min-w-[50px] w-fit focus:outline-black outline-dashed outline-[1px]"
           placeholder="입력"
           style={{
             width: `${formValues.rentalEndDate.length + 0}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
@@ -259,7 +269,7 @@ export const ContractInput: React.FC<ContractProps> = ({
           name="paymentDate"
           value={formValues.paymentDate}
           onChange={handleInputChange}
-          className="bg-transparent min-w-[50px] w-fit focus:outline-none"
+          className="bg-transparent min-w-[50px] w-fit focus:outline-black outline-dashed outline-[1px]"
           placeholder="입력"
           style={{
             width: `${formValues.paymentDate.length + 0}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
@@ -276,7 +286,7 @@ export const ContractInput: React.FC<ContractProps> = ({
           name="lateInterestRate"
           value={formValues.lateInterestRate}
           onChange={handleInputChange}
-          className="bg-transparent min-w-[50px] w-fit focus:outline-none"
+          className="bg-transparent min-w-[50px] w-fit focus:outline-black outline-dashed outline-[1px]"
           placeholder="입력"
           style={{
             width: `${formValues.rentalEndDate.length + 0}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
@@ -292,7 +302,7 @@ export const ContractInput: React.FC<ContractProps> = ({
           name="latePenaltyRate"
           value={formValues.latePenaltyRate}
           onChange={handleInputChange}
-          className="bg-transparent min-w-[50px] w-fit focus:outline-none"
+          className="bg-transparent min-w-[50px] w-fit focus:outline-black outline-dashed outline-[1px]"
           placeholder="입력"
           style={{
             width: `${formValues.rentalEndDate.length + 0}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
@@ -310,7 +320,7 @@ export const ContractInput: React.FC<ContractProps> = ({
           name="damageCompensationRate"
           value={formValues.damageCompensationRate}
           onChange={handleInputChange}
-          className="bg-transparent min-w-[50px] w-fit focus:outline-none"
+          className="bg-transparent min-w-[50px] w-fit focus:outline-black outline-dashed outline-[1px]"
           placeholder="입력"
           style={{
             width: `${formValues.rentalEndDate.length + 0}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
@@ -329,7 +339,7 @@ export const ContractInput: React.FC<ContractProps> = ({
           name="createdDate"
           value={formValues.createdDate}
           onChange={handleInputChange}
-          className="bg-transparent min-w-[100px] w-fit focus:outline-none"
+          className="bg-transparent min-w-[100px] w-fit focus:outline-black outline-dashed outline-[1px]"
           placeholder="오늘 날짜"
           style={{
             width: `${formValues.createdDate.length + 0}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
@@ -344,7 +354,7 @@ export const ContractInput: React.FC<ContractProps> = ({
             name="lender"
             value={formValues.lender}
             onChange={handleInputChange}
-            className="bg-transparent min-w-[50px] w-fit focus:outline-none"
+            className="bg-transparent min-w-[50px] w-fit focus:outline-black outline-dashed outline-[1px]"
           placeholder="입력"
           style={{
             width: `${formValues.rentalEndDate.length + 0}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
@@ -358,7 +368,7 @@ export const ContractInput: React.FC<ContractProps> = ({
             name="borrower"
             value={formValues.borrower}
             onChange={handleInputChange}
-            className="bg-transparent min-w-[50px] w-fit focus:outline-none"
+            className="bg-transparent min-w-[50px] w-fit focus:outline-black outline-dashed outline-[1px]"
           placeholder="입력"
           style={{
             width: `${formValues.rentalEndDate.length + 0}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~

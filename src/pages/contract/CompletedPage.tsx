@@ -21,7 +21,7 @@ export default function CompletedContractPage () {
           
             <div
               
-              className="flex w-full max-w-[800px] h-[500px] overflow-y-auto overflow-x-hidden rounded-[27.42px] cursor-pointer transform transition duration-170 hover:scale-[1.01] z-0 p-10"
+              className="flex w-full max-w-[800px] h-[500px] overflow-y-auto overflow-x-hidden rounded-[27.42px]  transform transition duration-170 hover:scale-[1.01] z-0 p-10"
               style={{ boxShadow: '0px 3.8px 10.5px 0 rgba(0,0,0,0.35)', scrollMarginLeft:'1000px'}}
               
             >
@@ -36,22 +36,22 @@ export default function CompletedContractPage () {
       rentalEndDate={'2024.11.25'} 
       rentalPlace={'울집~'} 
       rentalDetailAddress={'캐슬파크a동3115호'} 
-      returnDate={''} 
-      returnPlace={''} 
-      returnDetailAddress={''} 
+      returnDate={'2024.12.25'} 
+      returnPlace={'2025.12.25'} 
+      returnDetailAddress={'메가원탑'} 
       rentalFee={0} 
-      paymentDate={''} 
+      paymentDate={'2025.02.23'} 
       lateInterestRate={0} 
       latePenaltyRate={0} 
       damageCompensationRate={0} 
-      createdDate={''} 
+      createdDate={'2024.11.25'} 
       />
       </div>
       </div>
       <div className="flex flex-col items-center justify-start pt-4 z-50 h-[16.3%]">
           <label className="flex items-center cursor-pointer">
             
-            <span className="text-lg">
+            <span className="text-lg hover:scale-[101%]">
               계약서의 내용을 동의하시겠습니까?
             </span>
             <input
