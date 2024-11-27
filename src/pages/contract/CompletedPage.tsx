@@ -37,8 +37,8 @@ export default function CompletedContractPage () {
       rentalPlace={'울집~'} 
       rentalDetailAddress={'캐슬파크a동3115호'} 
       returnDate={'2024.12.25'} 
-      returnPlace={'2025.12.25'} 
-      returnDetailAddress={'메가원탑'} 
+      returnPlace={'메가원탑'} 
+      returnDetailAddress={'인천타워대로132번길9'} 
       rentalFee={0} 
       paymentDate={'2025.02.23'} 
       lateInterestRate={0} 

@@ -129,7 +129,7 @@ export const ContractCompleted: React.FC<ContractProps> = ({
         것일 경우 차용인은 배상책임을 면한다.
       </p>
 
-      <p className="mt-6 font-medium"><span className="underline underline-offset-2">{createdDate}</span></p>
+      <p className="mt-6 font-bold text-center"><span className="underline underline-offset-2">{createdDate}</span></p>
 
       <div className="mt-8 text-center">
         <p className="mb-4">

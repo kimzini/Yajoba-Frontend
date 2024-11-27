@@ -339,7 +339,7 @@ export const ContractInput: React.FC<ContractProps> = ({
           name="createdDate"
           value={formValues.createdDate}
           onChange={handleInputChange}
-          className="bg-transparent min-w-[100px] w-fit focus:outline-black outline-dashed outline-[1px]"
+          className="bg-transparent min-w-[100px] w-fit focus:outline-black font-semibold outline-dashed outline-[1px]"
           placeholder="오늘 날짜"
           style={{
             width: `${formValues.createdDate.length + 0}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
@@ -369,10 +369,10 @@ export const ContractInput: React.FC<ContractProps> = ({
             value={formValues.borrower}
             onChange={handleInputChange}
             className="bg-transparent min-w-[50px] w-fit focus:outline-black outline-dashed outline-[1px]"
-          placeholder="입력"
-          style={{
+            placeholder="입력"
+            style={{
             width: `${formValues.rentalEndDate.length + 0}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
-          }}
+            }}
           />
         </p>
       </div>
