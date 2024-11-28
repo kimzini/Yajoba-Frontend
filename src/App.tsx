@@ -8,6 +8,7 @@ import LoginPage from './pages/Auth/Login/page';
 import SignupPage from './pages/Auth/Signup/page';
 import MyPage from './pages/Mypage/page';
 import OnboardingPage from './pages/Onboarding/page';
+import { SearchPage } from './pages/Search/page';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/signup/profile" element={<OnboardingPage />} />
         <Route path="/profile" element={<MyPage />} />
+        <Route path="/search" element={<SearchPage />} />
       </Routes>
     </Router>
   );
