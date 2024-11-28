@@ -1,42 +1,87 @@
 import logo from '@/assets/images/logo.png';
+import { Button } from '@/components/ui/button';
+import { ReactComponent as Dropdown } from '@/assets/svgs/dropdown.svg';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { useActiveLink } from '@/hooks/utils/useActiveLink';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 export const HeaderWithSearch = () => {
   const isProductPage = useActiveLink('/product');
   const isChatPage = useActiveLink('/chat');
   const isMypage = useActiveLink('/profile');
+  const [selectedFilter, setSelectedFilter] = useState('상품명');
+
+  const navigate = useNavigate();
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      const keyword = e.currentTarget.value.trim();
+      // 필터링 된 값 추후에 쿼리로 보낼 예정
+      if (keyword) {
+        navigate('/search');
+      }
+    }
+  };
 
   return (
-    <div className="bg-static-100 fixed top-0 z-30 w-screen bg-primary-0 border-b border-neutral-80 px-10 shadow-[2px_0px_2px_1px_rgba(0,0,0,0.05)]">
+    <div className="bg-static-100 fixed top-0 z-30 w-screen border-b border-neutral-80 bg-primary-0 px-10 shadow-[2px_0px_2px_1px_rgba(0,0,0,0.05)]">
       <div className="flex h-[4.8rem] items-center justify-between">
         <div className="flex items-center gap-[2rem]">
           <a className="h-[2.2rem] w-full" href="/">
             <img className="h-full" src={logo} alt="야줘바 로고" />
           </a>
 
-          <div className="mt-2 flex items-center gap-1 rounded-sm border border-neutral-75 px-3 focus-within:border-primary-dark">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="17"
-              height="17"
-              viewBox="0 0 19 19"
-              fill="none"
-            >
-              <path
-                d="M12.3333 12.3333L18 18M7.61111 14.2222C3.9599 14.2222 1 11.2623 1 7.61111C1 3.9599 3.9599 1 7.61111 1C11.2623 1 14.2222 3.9599 14.2222 7.61111C14.2222 11.2623 11.2623 14.2222 7.61111 14.2222Z"
-                stroke="black"
-                stroke-opacity="0.5"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+          <div className="flex items-center gap-[20px]">
+            <div className="mt-2 flex items-center gap-1 rounded-sm border border-neutral-75 px-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="17"
+                viewBox="0 0 19 19"
+                fill="none"
+              >
+                <path
+                  d="M12.3333 12.3333L18 18M7.61111 14.2222C3.9599 14.2222 1 11.2623 1 7.61111C1 3.9599 3.9599 1 7.61111 1C11.2623 1 14.2222 3.9599 14.2222 7.61111C14.2222 11.2623 11.2623 14.2222 7.61111 14.2222Z"
+                  stroke="black"
+                  stroke-opacity="0.5"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
 
-            <input
-              type="text"
-              placeholder="원하시는 상품을 입력해주세요"
-              className="h-1/2 w-[33rem] border-none px-3 py-[0.65rem] text-small17 text-neutral-10 placeholder-neutral-50 outline-none"
-            />
+              <input
+                type="text"
+                placeholder="원하시는 상품을 입력해주세요"
+                className="h-1/2 w-[33rem] border-none px-3 py-[12px] text-small17 text-neutral-10 placeholder-neutral-50 outline-none"
+                onKeyDown={handleKeyDown}
+              />
+            </div>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button className="mt-2 flex h-full min-w-[110px] items-center justify-between rounded-sm border border-neutral-75 bg-white py-[12px] text-medium20 text-neutral-30">
+                  <span>{selectedFilter}</span>
+                  <Dropdown className="self-center pt-[3px]" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-white py-2 text-medium18 font-medium text-neutral-40">
+                <DropdownMenuItem onClick={() => setSelectedFilter('상품명')}>
+                  상품명
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setSelectedFilter('카테고리')}>
+                  카테고리
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setSelectedFilter('장소')}>
+                  장소
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
 
@@ -118,7 +163,7 @@ export const HeaderWithoutSearch = () => {
   const isMypage = useActiveLink('/profile');
 
   return (
-    <div className="bg-static-100 fixed top-0 z-30 w-screen bg-primary-0 border-b border-neutral-80 px-10 shadow-[2px_0px_2px_1px_rgba(0,0,0,0.05)]">
+    <div className="bg-static-100 fixed top-0 z-30 w-screen border-b border-neutral-80 bg-primary-0 px-10 shadow-[2px_0px_2px_1px_rgba(0,0,0,0.05)]">
       <div className="flex h-[4.85rem] items-center justify-between">
         <div className="flex items-center gap-4">
           <a className="h-[2.2rem] w-full" href="/">
@@ -199,7 +244,7 @@ export const HeaderWithoutSearch = () => {
 
 export const LoginHeader = () => {
   return (
-    <div className="bg-static-100 fixed bg-primary-0 top-0 z-30 w-screen border-b border-neutral-80 px-10 shadow-[2px_0px_2px_1px_rgba(0,0,0,0.05)]">
+    <div className="bg-static-100 fixed top-0 z-30 w-screen border-b border-neutral-80 bg-primary-0 px-10 shadow-[2px_0px_2px_1px_rgba(0,0,0,0.05)]">
       <div className="flex h-[4.85rem] items-center justify-between">
         <div className="flex items-center gap-4">
           <a className="h-[2.2rem] w-full" href="/">
