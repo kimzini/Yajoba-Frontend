@@ -3,7 +3,7 @@ import { SearchCard } from '@/components/Search/SearchCard';
 import bag from '@/assets/images/bag.png';
 import profile from '@/assets/images/profile.png';
 
-export const SearchPage = () => {
+const SearchPage = () => {
   return (
     <div className="min-h-screen flex w-screen flex-col">
       <HeaderWithSearch />
@@ -20,3 +20,5 @@ export const SearchPage = () => {
     </div>
   );
 };
+
+export default SearchPage;
