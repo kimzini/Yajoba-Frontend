@@ -22,7 +22,7 @@ interface ContractProps {
   createdDate: string;
 }
 
-export const ContractInput: React.FC<ContractProps> = ({
+export const ContractInput = ({
   lender,
   borrower,
   itemName,
@@ -42,8 +42,8 @@ export const ContractInput: React.FC<ContractProps> = ({
   latePenaltyRate,
   damageCompensationRate,
   createdDate,
-}) => {
-  const [formValues, setFormValues] = useState({
+}: ContractProps ) => {
+  const [formValues, setFormValues] = useState<ContractProps>({
     lender,
     borrower,
     itemName,

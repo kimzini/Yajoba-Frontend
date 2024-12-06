@@ -23,7 +23,7 @@ interface ContractProps {
   createdDate: string;
 }
 
-export const ContractCompleted: React.FC<ContractProps> = ({
+export const ContractCompleted = ({
   lender,
   borrower,
   itemName,
@@ -43,27 +43,27 @@ export const ContractCompleted: React.FC<ContractProps> = ({
   latePenaltyRate,
   damageCompensationRate,
   createdDate,
-}) => {
-  const [formValues, setFormValues] = useState({
+}: ContractProps) => {
+  const [formValues, setFormValues] = useState<ContractProps>({
     lender,
     borrower,
-    // itemName,
-    // specifications,
-    // quantity,
-    // condition,
-    // notes: notes || "",
-    // rentalEndDate,
-    // rentalPlace,
-    // rentalDetailAddress,
-    // returnDate,
-    // returnPlace,
-    // returnDetailAddress,
-    // rentalFee,
-    // paymentDate,
-    // lateInterestRate,
-    // latePenaltyRate,
-    // damageCompensationRate,
-    // createdDate,
+    itemName,
+    specifications,
+    quantity,
+    condition,
+    notes: notes || "",
+    rentalEndDate,
+    rentalPlace,
+    rentalDetailAddress,
+    returnDate,
+    returnPlace,
+    returnDetailAddress,
+    rentalFee,
+    paymentDate,
+    lateInterestRate,
+    latePenaltyRate,
+    damageCompensationRate,
+    createdDate,
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -78,7 +78,7 @@ export const ContractCompleted: React.FC<ContractProps> = ({
           <div className="flex w-full h-[85%] justify-center items-center overflow-hidden">
           </div>
           
-      <h1 className="text-3xl font-bold text-center mb-8">차용 계약서(차용인ver)</h1>
+      <span className="text-3xl font-bold text-center mb-8">차용 계약서(차용인ver)</span>
 
       <p className="font-extrabold ">
         <strong className="">대여인:</strong> <span className="underline underline-offset-2">{lender}</span>
