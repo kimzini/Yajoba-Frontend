@@ -21,7 +21,7 @@ export default function DefaultContractPage () {
           
             <div
               
-              className="flex w-full max-w-[800px] h-[500px] overflow-y-auto overflow-x-hidden rounded-[27.42px] transform transition duration-170 hover:scale-[1.01] z-0 p-10"
+              className="flex w-full max-w-[82%] max-h-[84%] overflow-y-auto overflow-x-hidden rounded-[27.42px] transform transition duration-170 hover:scale-[1.01] z-0 p-10"
               style={{ boxShadow: '0px 3.8px 10.5px 0 rgba(0,0,0,0.35)', scrollMarginLeft:'1000px'}}
               
             >

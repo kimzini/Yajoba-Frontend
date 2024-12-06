@@ -91,17 +91,7 @@ export const ContractInput: React.FC<ContractProps> = ({
         />
       </p>
       <p>
-        <strong>차용인:</strong>{" "}
-        <input
-          type="text"
-          name="borrower"
-          value={formValues.borrower}
-          onChange={handleInputChange}
-          className="bg-transparent focus:outline-black outline-dashed outline-[1px]"
-          style={{
-            width: `${formValues.borrower.length + 3}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
-          }}
-        />
+      <strong>차용인:</strong> <span className="underline underline-offset-2">{borrower}</span>
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-4">물품 정보</h2>

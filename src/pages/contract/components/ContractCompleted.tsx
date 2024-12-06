@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 interface ContractProps {
   lender: string;
@@ -43,6 +44,35 @@ export const ContractCompleted: React.FC<ContractProps> = ({
   damageCompensationRate,
   createdDate,
 }) => {
+  const [formValues, setFormValues] = useState({
+    lender,
+    borrower,
+    // itemName,
+    // specifications,
+    // quantity,
+    // condition,
+    // notes: notes || "",
+    // rentalEndDate,
+    // rentalPlace,
+    // rentalDetailAddress,
+    // returnDate,
+    // returnPlace,
+    // returnDetailAddress,
+    // rentalFee,
+    // paymentDate,
+    // lateInterestRate,
+    // latePenaltyRate,
+    // damageCompensationRate,
+    // createdDate,
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  };
   return (
     <div className="flex flex-col w-full h-full ">
           <div className="flex w-full h-[85%] justify-center items-center overflow-hidden">
@@ -54,7 +84,17 @@ export const ContractCompleted: React.FC<ContractProps> = ({
         <strong className="">대여인:</strong> <span className="underline underline-offset-2">{lender}</span>
       </p>
       <p>
-        <strong>차용인:</strong> <span className="underline underline-offset-2">{borrower}</span>
+      <strong>차용인:</strong>{" "}
+        <input
+          type="text"
+          name="borrower"
+          value={formValues.borrower}
+          onChange={handleInputChange}
+          className="bg-transparent focus:outline-black outline-dashed outline-[1px]"
+          style={{
+            width: `${formValues.borrower.length + 3}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
+          }}
+        />
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-4">물품 정보</h2>
@@ -136,7 +176,17 @@ export const ContractCompleted: React.FC<ContractProps> = ({
           <strong>대여인:</strong> <span className="underline underline-offset-2">{lender}</span> (서명)
         </p>
         <p className="mb-8">
-          <strong>차용인:</strong> <span className="underline underline-offset-2">{borrower}</span> (서명)
+          <strong>차용인:</strong>{" "}
+        <input
+          type="text"
+          name="lender"
+          value={formValues.borrower}
+          onChange={handleInputChange}
+          className="bg-transparent focus:outline-black outline-dashed outline-[1px]"
+          style={{
+            width: `${formValues.borrower.length + 3}ch`, // 입력 글자수에 따라 인풋필드 크기 변경하도록~
+          }}
+        />(서명)
         </p>
       </div>
       
