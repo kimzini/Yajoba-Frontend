@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import MainPage from './pages/Main/page';
 import ProductCreatePage from './pages/Product/Create/page';
 import ProductEditPage from './pages/Product/Edit/page';
@@ -8,8 +9,9 @@ import LoginPage from './pages/Auth/Login/page';
 import SignupPage from './pages/Auth/Signup/page';
 import MyPage from './pages/Mypage/page';
 import OnboardingPage from './pages/Onboarding/page';
-import { SearchPage } from './pages/Search/page';
-
+import DefaultContractPage from './pages/contract/DefaultPage';
+import CompletedContractPage from './pages/contract/CompletedPage';
+import SearchPage from './pages/Search/page';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/signup/profile" element={<OnboardingPage />} />
         <Route path="/profile" element={<MyPage />} />
         <Route path="/search" element={<SearchPage />} />
+        <Route path="/contract/Input" element={<DefaultContractPage />} />
+        <Route path="/contract/Completed" element={<CompletedContractPage />} />
       </Routes>
     </Router>
   );

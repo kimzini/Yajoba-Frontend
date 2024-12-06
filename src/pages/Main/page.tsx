@@ -31,7 +31,7 @@ const products = [
 
 const MainPage = () => {
   return (
-    <div className="min-h-screen flex w-screen flex-col">
+    <div className="min-h-screen flex max-w-screen flex-col">
       <HeaderWithSearch />
       <div className="mb-7 flex w-full justify-center pt-[75px]">
         <div className="flex h-[244px] w-full rounded-[10px] bg-secondary-70 shadow-lg">
