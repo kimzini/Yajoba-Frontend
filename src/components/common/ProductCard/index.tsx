@@ -27,7 +27,7 @@ interface CardProps {
     }
   
     return (
-      <div className="h-[220px] w-[230px] flex-col overflow-hidden rounded-[8px] border p-4">
+      <div className="bg-white h-[220px] w-[230px] flex-col overflow-hidden rounded-[8px] border p-4">
         <div className="mb-[13px] flex items-center justify-between">
           {StatusChip}
           <span className="text-xsmall16 font-semibold text-neutral-30">
