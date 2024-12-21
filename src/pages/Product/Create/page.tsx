@@ -44,7 +44,9 @@ const ProductCreatePage = () => {
       endDate: endDate ? endDate.toISOString().split('T')[0] : '',
       images,
     };
-
+    
+    console.log(formData);
+    
     // API
   };
 

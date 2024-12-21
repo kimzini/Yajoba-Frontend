@@ -45,6 +45,7 @@ const ProductEditPage = () => {
       images,
     };
 
+    console.log(formData);
     // 상품 수정 api
   };
 
